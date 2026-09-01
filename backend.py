@@ -34,7 +34,7 @@ def home():
 def run_task(payload: TaskRequest):
     try:
         # Generate AI response using Gemini
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-pro")
         prompt = f"You are NexusOps AI, an expert operations assistant. Handle this task professionally:\n\nTask: {payload.task}"
         ai_response = model.generate_content(prompt)
         result_text = ai_response.text
