@@ -1,3 +1,10 @@
+import os
+import json
+
+firebase_key_content = os.environ.get("FIREBASE_JSON_CONTENT")
+if firebase_key_content and not os.path.exists("nexusops-ai-1c0fe-firebase-adminsdk-fbsvc-70cd876441.json"):
+    with open("nexusops-ai-1c0fe-firebase-adminsdk-fbsvc-70cd876441.json", "w") as f:
+        f.write(firebase_key_content)
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import google.generativeai as genai
